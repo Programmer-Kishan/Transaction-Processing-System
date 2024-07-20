@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 right-0 py-5 px-10 bg-mat-blue flex flex-col tablet:flex-row justify-between text-center gap-5">
       <button 
-        onClick={handleNavbarShow}
+        onClick={handleNavbarShow} 
         className="tablet:hidden w-full flex justify-end text-2xl cursor-pointer">
         <GiHamburgerMenu />
       </button>
