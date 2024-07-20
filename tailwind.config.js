@@ -18,6 +18,7 @@ export default {
         roboto: ["Roboto", "sans-serif"]
       },
       screens: {
+        'desktop-sm': '1247px',
         'tablet': '915px',
         "moblie": "392px",
       }

@@ -57,8 +57,11 @@ const AllTransactions = () => {
 
   return (
     <>
-      <div className="flex gap-3 bg-grayish-white w-full">
-        <form className="w-1/4 h-screen mt-4 p-4 flex flex-col gap-5" onSubmit={handleSubmit}>
+      <div className="flex flex-col tablet:flex-row gap-3 bg-grayish-white w-full">
+        <form 
+          className="tablet:w-1/4 w-full h-fit tablet:h-screen mt-4 p-4 flex flex-col gap-5" 
+          onSubmit={handleSubmit}
+        >
           <div>  
             <input
               type="text"
@@ -79,7 +82,7 @@ const AllTransactions = () => {
               <TransactionFilter handlerfn={changeSelectHandler} field="currency" data={currencys as string[]}/>
           </div>
         </form>
-        <div className="w-full p-10 grid grid-cols-3 gap-5">
+        <div className="w-full p-10 grid grid-cols-1 tablet:grid-cols-2 desktop-sm:grid-cols-3 gap-5">
           {values?.map((val, index) => (
             <Transaction key={index} no={val._id as number} type={val.type} category={val.category} title={val.title} />
           ))}
