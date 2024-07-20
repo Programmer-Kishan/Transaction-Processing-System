@@ -1,19 +1,26 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
+import HomeLayout from "./Components/Layouts/HomeLayout";
 import Homepage from "./Components/HomePage/Homepage";
-import AddTransaction from "./Components/Transactions/AddTransaction";
+import AllTransactions from "./Components/Transactions/AllTransactions";
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Homepage />
+      element: <HomeLayout />,
+      children: [
+        {
+          path: "",
+          element: <Homepage />
+        },
+        {
+          path: "/transaction",
+          element: <AllTransactions />
+        }
+      ]
     },
-    {
-      path: "/add",
-      element: <AddTransaction />
-    }
   ])
 
   return (
