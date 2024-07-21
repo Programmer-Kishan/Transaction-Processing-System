@@ -61,7 +61,7 @@ const AllTransactions = () => {
   useEffect(() => {
     const data = localStorage.getItem("Transactions");
     if (!data) {
-      fetchCSVData("public/Tansactions.csv", (data) => {
+      fetchCSVData(process.env.PUBLIC_URL + "Tansactions.csv", (data) => {
         const temp = data?.map((val: ITransaction, ind: number) => ({ ...val, "_id": ind + 1 }))
         setValues(temp);
         const uniqueTypes = [...new Set(temp?.map((val: ITransaction) => val.type))];
