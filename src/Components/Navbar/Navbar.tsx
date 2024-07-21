@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className={`${show} tablet:flex flex-col tablet:flex-row gap-5 w-full items-center`}>
         <ul className="text-white flex flex-col gap-9 tablet:flex-row w-3/5 justify-around NavLinkst-none m-auto">
           <NavLink to="/" className="nav-text">Home</NavLink>
-          <NavLink to="/" className="nav-text">About</NavLink>
+          <NavLink to="/insights" className="nav-text">Insights</NavLink>
           <NavLink to="/" className="nav-text">Service</NavLink>
           <NavLink to="/" className="nav-text">Contact</NavLink>
         </ul>
