@@ -44,22 +44,25 @@ const BarChartType = () => {
     }, [])
 
     return barData && (
-        <BarChart
-            width={800}
-            height={300}
-            data={barData as CurrencyProps[]}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="category" />
-            <YAxis />
-            <Bar dataKey="count" fill="#109401" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-        </BarChart>)
+        <div className='w-fit h-fit mx-auto'>
+            <BarChart
+                width={1500}
+                height={300}
+                data={barData as CurrencyProps[]}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="category" />
+                <YAxis />
+                <Bar dataKey="count" fill="#109401" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            </BarChart>
+        </div>
+        )
 }
 
 export default BarChartType;

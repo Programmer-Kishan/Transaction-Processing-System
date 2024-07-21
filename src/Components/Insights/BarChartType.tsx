@@ -23,22 +23,25 @@ const BarChartType = () => {
     }, [])
 
     return barData && (
-        <BarChart
-            width={500}
-            height={300}
-            data={barData as BarChartProps[]}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="title" />
-            <YAxis />
-            <Bar dataKey="count" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-        </BarChart>)
+        <div className='h-fit w-fit mx-auto'>
+            <BarChart
+                width={500}
+                height={300}
+                data={barData as BarChartProps[]}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="title" />
+                <YAxis />
+                <Bar dataKey="count" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            </BarChart>
+        </div>
+        )
 }
 
 export default BarChartType;
