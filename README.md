@@ -3,6 +3,7 @@
 ## Project Description
 This is Frontend system which enable you to edit, add, delete tractions, it also provides with filters based on category, currency and type, further it has a feature of searching transaction based on title.
 It also provided also some bar charts to get useful insights.
+## We need to give the transaction csv file as input
 
 ## Technologies Used
 React.js, Typescript, TailwindCSS
