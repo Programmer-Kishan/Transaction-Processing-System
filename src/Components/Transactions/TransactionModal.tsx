@@ -14,7 +14,6 @@ interface TransactionModalProps {
 const TransactionModal = forwardRef<HTMLDialogElement, TransactionModalProps>(({data, currencys, handlerfn, close}, ref) => {
 
   const [isEdit, setIsEdit] = useState<boolean>(false);
-  console.log(data?._id);
   
   function handleSubmit(e: FormEvent) {
     e.preventDefault();

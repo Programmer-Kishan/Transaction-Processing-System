@@ -4,10 +4,13 @@ import { ITransaction } from '../../@types/TransactionData';
 
 interface FileModalProps {
     close: () => void,
-    resetValues: () => void
+    resetValues: () => void,
+    typeHandler: (data: string[]) => void,
+    categoryHandler: (data: string[]) => void,
+    currencyHandler: (data: string[]) => void,
 }
 
-const FileModal = forwardRef<HTMLDialogElement, FileModalProps>(({ close, resetValues }, ref) => {
+const FileModal = forwardRef<HTMLDialogElement, FileModalProps>(({ close, resetValues,typeHandler,categoryHandler,currencyHandler }, ref) => {
 
     function handleFileUpload(e: FormEvent) {
         console.log((e.target as HTMLFormElement).files[0]);
@@ -17,6 +20,12 @@ const FileModal = forwardRef<HTMLDialogElement, FileModalProps>(({ close, resetV
             complete: (results) => {
                 const temp = results.data.map((val, ind) => ({ ...(val as ITransaction), "_id": ind + 1 }))
                 localStorage.setItem("Transactions", JSON.stringify(temp));
+                const uniqueTypes = [...new Set(temp?.map((val: ITransaction) => val.type))];
+                const uniqueCategory = [...new Set(temp?.map((val: ITransaction) => val.category))];
+                const uniqueCurrency = [...new Set(temp?.map((val: ITransaction) => val.currency))];
+                typeHandler(uniqueTypes as string[]);
+                categoryHandler(uniqueCategory as string[]);
+                currencyHandler(uniqueCurrency as string[]);
                 resetValues();
                 close();
             },

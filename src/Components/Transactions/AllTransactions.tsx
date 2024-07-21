@@ -115,7 +115,7 @@ const AllTransactions = () => {
     <>
       <TransactionModal data={selectedData as ITransaction} currencys={currencys as string[]} handlerfn={resetValues} close={closeModal} ref={transactionDialog} />
       <AddTransactionModal types={types as string[]} categorys={categorys as string[]} currencys={currencys as string[]} handlerfn={resetValues} close={closeAddModal} ref={AddTransactionRef} />
-      <FileModal close={closeFileModal} resetValues={resetValues} ref={FileModalRef} />
+      <FileModal close={closeFileModal} resetValues={resetValues} typeHandler={setTypes} categoryHandler={setCategorys} currencyHandler={setCurrencys} ref={FileModalRef} />
       <div className="flex flex-col tablet:flex-row gap-3 bg-grayish-white dark:bg-dark-gray w-full">
         <form
           className="tablet:w-1/4 w-full h-fit tablet:h-screen mt-4 p-4 flex flex-col gap-5"
