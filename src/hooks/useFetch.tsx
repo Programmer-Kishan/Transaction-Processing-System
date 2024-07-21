@@ -1,6 +1,7 @@
 import Papa from "papaparse"
+import { ITransaction } from "../@types/TransactionData";
 
-type Callback = (data:any) => void
+type Callback = (data: ITransaction[]) => void
 
 const useFetch = () => {
 
@@ -14,7 +15,7 @@ const useFetch = () => {
             header: true,
             dynamicTyping: true
         })
-        callback(data);
+        callback(data as ITransaction[]);
     }
 
     return { fetchCSVData }

@@ -8,3 +8,4 @@ export interface ITransaction {
     currency: string
     note: string
 }
+
