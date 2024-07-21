@@ -24,6 +24,10 @@ function App() {
           path: "/insights",
           element: <Charts />
         },
+        {
+          path: "/*",
+          element: <Homepage />
+        },
       ]
     },
   ])
