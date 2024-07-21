@@ -2,7 +2,7 @@ import { ChangeEvent } from "react"
 
 interface FilterProps {
     data: string[],
-    handlerfn: (arg0: ChangeEvent, arg1: string) => void,
+    handlerfn: (e: ChangeEvent, field: string) => void,
     field: string
 }
 
