@@ -29,8 +29,6 @@ const Navbar = () => {
         <ul className="text-white flex flex-col gap-9 tablet:flex-row w-3/5 justify-around NavLinkst-none m-auto">
           <NavLink to="/" className="nav-text">Home</NavLink>
           <NavLink to="/insights" className="nav-text">Insights</NavLink>
-          <NavLink to="/" className="nav-text">Service</NavLink>
-          <NavLink to="/" className="nav-text">Contact</NavLink>
         </ul>
         <div onClick={darkModeHandler} className="text-3xl cursor-pointer p-1 rounded-md">
           {dark ? <FaMoon /> : <TiWeatherSunny />}
