@@ -144,7 +144,7 @@ const AllTransactions = () => {
             className="p-3 bg-dark-blue text-white text-lg font-poppins"
             onClick={showAddTransactionModal}
           >
-            Add Transaction
+            Add Transactionsssss
           </button>
         </form>
         <div className="w-full p-10 grid grid-cols-1 tablet:grid-cols-2 desktop-sm:grid-cols-3 gap-5">
