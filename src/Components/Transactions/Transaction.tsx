@@ -18,10 +18,10 @@ const Transaction = ({no, type, category, title, setterfn, show} : TransactionPr
   }
 
   return (
-    <div className="p-5 border-2 border-black rounded-xl flex flex-col gap-7">
+    <div className="p-5 border-2 border-black dark:border-grayish-white rounded-xl flex flex-col gap-7">
       <h3 className="font-montserrat text-xl text-dark-blue font-medium">Transaction Number: {no}</h3>
-      <h1 className="font-montserrat text-3xl font-bold">{title} - {category}</h1>
-      <p className="font-poppins text-2xl font-normal">Type of Transaction: {type}</p>
+      <h1 className="font-montserrat text-3xl font-bold text-black dark:text-white">{title} - {category}</h1>
+      <p className="font-poppins text-2xl font-normal text-black dark:text-white">Type of Transaction: {type}</p>
       <button 
         className="mt-auto text-right text-mat-blue font-roboto font-semibold hover:tracking-wide transition-all"
         onClick={handleClick}

@@ -9,7 +9,7 @@ interface FilterProps {
 const TransactionFilter = ({data, handlerfn, field}: FilterProps) => {
     return (
         <>
-            <h3 className="text-xl font-poppins mb-5">Filter based on {field.toUpperCase()}</h3>
+            <h3 className="text-xl font-poppins mb-5 dark:text-white text-black">Filter based on {field.toUpperCase()}</h3>
             <select 
                 onChange={(e) => handlerfn(e, field)}
                 className="p-1 text-lg w-full font-roboto"
