@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Transaction Processing System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+This is Frontend system which enable you to edit, add, delete tractions, it also provides with filters based on category, currency and type, further it has a feature of searching transaction based on title.
+It also provided also some bar charts to get useful insights.
 
-Currently, two official plugins are available:
+## Technologies Used
+React.js, Typescript, TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+First You need to get the project files.
+There are 2 ways for that
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1st Way
+Download the zip file form the clicking on button with Code written on top right above where the project files are displayed it and then Download Zip.
+Extract the files.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### 2nd Way
+Copy the link the clicking on button with Code written on top right above where the project files are displayed and copy the link under https.
+Then run the following command in your respective folder.
+```bash
+git clone LINK
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+After getting the project files.
+
+Then Navigate into the project folder and run following command
+```bash
+npm run dev
+```
