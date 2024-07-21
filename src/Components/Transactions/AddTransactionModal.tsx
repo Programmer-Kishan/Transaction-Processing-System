@@ -38,7 +38,7 @@ const AddTransactionModal = forwardRef<HTMLDialogElement, AddTransactionProps>((
     }
 
   return (
-    <dialog ref={ref} className="w-3/5 bg-white rounded-xl px-10 py-5">
+    <dialog ref={ref} className="mini-tab:w-3/5 w-full bg-white rounded-xl px-10 py-5">
         <form className='flex flex-col gap-5' onSubmit={handleSubmit}>
             <h3 className='font-roboto text-2xl font-semibold'>Enter Transaction details</h3>
             <div className='w-full font-poppins text-xl'>
@@ -47,7 +47,7 @@ const AddTransactionModal = forwardRef<HTMLDialogElement, AddTransactionProps>((
             </div>
             <div className='w-full font-poppins text-xl'>
                 <label htmlFor="title">Enter Title: </label>
-                <input type="text" id='title' name='title' required className='border-2 border-black' />
+                <input type="text" id='title' name='title' required className='w-full border-2 border-black' />
             </div>
             <div className='w-full font-poppins text-xl grid grid-cols-1 desktop-sm:grid-cols-2 gap-4'>
                 <select name="type" id="type" className='border-2 border-black' required>
@@ -59,10 +59,10 @@ const AddTransactionModal = forwardRef<HTMLDialogElement, AddTransactionProps>((
                     {categorys?.map(category => <option key={Math.random()} value={category}>{category}</option>)}
                 </select>
             </div>
-            <div className='w-full font-poppins text-xl grid grid-cols-1 desktop-sm:grid-cols-2'>
+            <div className='w-full font-poppins text-xl grid grid-cols-1 desktop-sm:grid-cols-2 gap-5'>
                 <div>
                     <label htmlFor="amount">Enter Amount: </label>
-                    <input type="number" id='amount' name='amount' step={0.01} className='border-2 border-black' required/>
+                    <input type="number" id='amount' name='amount' step={0.01} className='w-full border-2 border-black' required/>
                 </div>
                 <select name="currency" id="currency" className='border-2 border-black' required>
                     <option>Select Currency</option>

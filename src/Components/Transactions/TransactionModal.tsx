@@ -55,7 +55,7 @@ const TransactionModal = forwardRef<HTMLDialogElement, TransactionModalProps>(({
   }
 
   return (
-    <dialog ref={ref} className="w-3/5 bg-white rounded-xl px-10 py-5">
+    <dialog ref={ref} className="mini-tab:w-3/5 w-full bg-white rounded-xl px-10 py-5">
         <div className="w-full flex justify-end gap-6">
           <button 
             className="p-2 bg-mat-blue rounded-full cursor-pointer"

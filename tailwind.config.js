@@ -20,6 +20,7 @@ export default {
       screens: {
         'desktop-sm': '1247px',
         'tablet': '915px',
+        'mini-tab': "560px",
         "moblie": "392px",
       }
     },
