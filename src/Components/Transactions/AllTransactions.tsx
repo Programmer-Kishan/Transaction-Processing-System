@@ -2,10 +2,11 @@ import { useState, useEffect, useRef, FormEvent } from "react";
 
 import { ITransaction } from "../../@types/TransactionData";
 import Transaction from "./Transaction";
-import useFetch from "../../hooks/useFetch";
+// import useFetch from "../../hooks/useFetch";
 import TransactionFilter from "./TransactionFilter";
 import TransactionModal from "./TransactionModal";
 import AddTransactionModal from "./AddTransactionModal";
+import FileModal from "./FileModal";
 
 
 const AllTransactions = () => {
@@ -19,9 +20,10 @@ const AllTransactions = () => {
 
   const transactionDialog = useRef<HTMLDialogElement>(null);
   const AddTransactionRef = useRef<HTMLDialogElement>(null);
+  const FileModalRef = useRef<HTMLDialogElement>(null);
   const [selectedData, setSelectedData] = useState<ITransaction | null>(null);
 
-  const { fetchCSVData } = useFetch();
+  // const { fetchCSVData } = useFetch();
 
   const data = JSON.parse(localStorage.getItem("Transactions") as string);
 
@@ -53,6 +55,13 @@ const AllTransactions = () => {
     }
     AddTransactionRef?.current.close();
   }
+  
+  function closeFileModal() {
+    if (!FileModalRef.current) {
+      return;
+    }
+    FileModalRef?.current.close();
+  }
 
   function resetValues() {
     setValues(JSON.parse(localStorage.getItem("Transactions") as string))
@@ -61,17 +70,7 @@ const AllTransactions = () => {
   useEffect(() => {
     const data = localStorage.getItem("Transactions");
     if (!data) {
-      fetchCSVData(process.env.PUBLIC_URL + "Tansactions.csv", (data) => {
-        const temp = data?.map((val: ITransaction, ind: number) => ({ ...val, "_id": ind + 1 }))
-        setValues(temp);
-        const uniqueTypes = [...new Set(temp?.map((val: ITransaction) => val.type))];
-        const uniqueCategory = [...new Set(temp?.map((val: ITransaction) => val.category))];
-        const uniqueCurrency = [...new Set(temp?.map((val: ITransaction) => val.currency))];
-        setTypes(uniqueTypes as string[]);
-        setCategorys(uniqueCategory as string[]);
-        setCurrencys(uniqueCurrency as string[]);
-        localStorage.setItem("Transactions", JSON.stringify(temp))
-      })
+      FileModalRef.current?.showModal();
     } else {
       const transData = JSON.parse(data);
       setValues(transData);
@@ -111,10 +110,12 @@ const AllTransactions = () => {
     setValues(targetData);
   }
 
+
   return (
     <>
       <TransactionModal data={selectedData as ITransaction} currencys={currencys as string[]} handlerfn={resetValues} close={closeModal} ref={transactionDialog} />
       <AddTransactionModal types={types as string[]} categorys={categorys as string[]} currencys={currencys as string[]} handlerfn={resetValues} close={closeAddModal} ref={AddTransactionRef} />
+      <FileModal close={closeFileModal} resetValues={resetValues} ref={FileModalRef} />
       <div className="flex flex-col tablet:flex-row gap-3 bg-grayish-white dark:bg-dark-gray w-full">
         <form
           className="tablet:w-1/4 w-full h-fit tablet:h-screen mt-4 p-4 flex flex-col gap-5"
@@ -144,7 +145,7 @@ const AllTransactions = () => {
             className="p-3 bg-dark-blue text-white text-lg font-poppins"
             onClick={showAddTransactionModal}
           >
-            Add Transactionsssss
+            Add Transaction
           </button>
         </form>
         <div className="w-full p-10 grid grid-cols-1 tablet:grid-cols-2 desktop-sm:grid-cols-3 gap-5">

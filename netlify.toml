@@ -1,7 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[files]
-    src = "dist/Transaction.csv"
-    headers = { Content-Disposition = "attachment; filename=\"Transaction.csv\"" }
