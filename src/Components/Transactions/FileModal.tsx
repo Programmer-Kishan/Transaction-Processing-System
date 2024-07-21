@@ -39,6 +39,7 @@ const FileModal = forwardRef<HTMLDialogElement, FileModalProps>(({ close, resetV
                     type="file"
                     className="hidden"
                     id="fileInput"
+                    accept='.csv, text/csv'
                     onChange={handleFileUpload}
                 />
                 <label
